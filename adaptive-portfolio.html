@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адаптивный макет портфолио</title>
+    <style>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: rebeccapurple;
+}
+.portfolio-section {
+    padding: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+.portfolio-section h2 {
+margin-bottom: auto;
+color: greenyellow;
+padding: 15px;
+}
+.projects-grid {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    justify-content: center;
+}
+.projects-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.projects-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+.projects-item h3 {
+    margin: 0;
+    margin-bottom: 15px;
+    font-size: larger;
+    color: rebeccapurple;
+}
+.projects-item p {
+    margin: 0;
+    margin-bottom: 15px;
+    font-size: medium;
+    color: blue;
+}
+.project-links {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-around;
+}
+.project-links button {
+    margin-top: 25px;
+        padding: 15px;
+        background-color: aquamarine;
+        color: rebeccapurple;
+        border: 1px solid black;
+        border-radius: 8px;
+        text-decoration: none;
+        display: inline-block;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        font-size: medium;
+}
+.project-links button:hover {
+    background-color: aqua;
+    transform: scale(1.05)
+}
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 480px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    .projects-item {
+        padding: 15px;
+    }
+    
+}
+    </style>
+</head>
+<body>
+    <div class="portfolio-section">
+        <h2>Мои проекты</h2>
+        <div class="projects-grid">
+            <div class="projects-item">
+                <img src="https://www.onetwotrip.com/ru/blog/static/images/traveler-is-different-from-tourist/young-man-traveler.jpg" alt="Путешествия">
+                <h3>Личный блог путешественника</h3>
+                <p>Макет личного блога, где фотограф-путешественник делится своими приключениями и впечатлениями. Основной фокус на визуальном контенте — высококачественных фотографиях и коротких историях, с адаптивной сеткой галереи, которая красиво отображается на любых устройствах, от настольных компьютеров до смартфонов.</p>
+                <div class="project-links">
+                    <a href="https://dzen.ru/aniforge" target="_blank"><button>Демо</button></a>
+                    <a href="https://dzen.ru/aniforge" target="_blank"><button>GitHub</button></a>
+                </div>
+            </div>
+            <div class="projects-item">
+                <img src="https://www.culturepartnership.eu/upload/news/5c1771671fa52.jpg" alt="Ремесленные изделия">
+                <h3>Онлайн-магазин ремесленных изделий</h3>
+                <p>Дизайн для небольшого e-commerce проекта, продающего уникальные изделия ручной работы. Макет подчеркивает красоту и детализацию каждого товара через крупные изображения и интуитивно понятное расположение элементов. Адаптивность обеспечивает удобный просмотр каталога и процесс покупки как на больших экранах, так и на мобильных устройствах.</p>
+                <div class="project-links">
+                    <a href="https://dzen.ru/aniforge" target="_blank"><button>Демо</button></a>
+                    <a href="https://dzen.ru/aniforge" target="_blank"><button>GitHub</button></a>
+                </div>
+            </div>
+            <div class="projects-item">
+                <img src="https://planergy.com/wp-content/uploads/2017/04/Point02-Featured-What-is-software-as-a-service-SaaS.jpg" alt="SaaS-сервис">
+                <h3>SaaS-сервис для управления проектами</h3>
+                <p>Минималистичный и функциональный макет для веб-приложения, предназначенного для командного управления проектами. Внимание сосредоточено на чистом интерфейсе с элементами дашборда, списками задач и календарем, адаптирующимися для эффективного отображения ключевой информации на экранах любого размера, обеспечивая удобство использования в дороге.</p>
+                <div class="project-links">
+                    <a href="https://dzen.ru/aniforge" target="_blank"><button>Демо</button></a>
+                    <a href="https://dzen.ru/aniforge" target="_blank"><button>GitHub</button></a>
+                </div>
+            </div>
+            <div class="projects-item">
+                <img src="https://ruward.ru/files/bigimg/kislorod_h.jpg" alt="Креативное агентство">
+                <h3>Портфолио креативного агентства</h3>
+                <p>Динамичный и визуально насыщенный макет, представляющий работы креативного агентства. Этот проект демонстрирует презентацию кейсов с использованием видео-превью, анимаций и интерактивных элементов. Макет адаптируется для оптимального отображения богатого медиа-контента на всех устройствах, сохраняя высокую производительность.</p>
+                <div class="project-links">
+                    <a href="https://dzen.ru/aniforge" target="_blank"><button>Демо</button></a>
+                    <a href="https://dzen.ru/aniforge" target="_blank"><button>GitHub</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

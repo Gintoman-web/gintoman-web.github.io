@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Секция услуг с карточками</title>
+    <style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        background-color: #e9ecef;
+    }
+    .services-section {
+        padding: 50px 0;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .services-section h2 {
+        margin-bottom: 40px;
+        color: #343a40;
+    }
+    .service-cards-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 25px;
+    }
+    .service-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+    .service-card:hover {
+        transform: scale(1.05);
+    }
+    .service-card button:hover {
+        background-color: orange;
+        transform: scale(1.05)
+    } 
+    .icon {
+        font-size: 3em;
+        color: #007bff;
+        margin-bottom: 20px;
+    }
+    .service-card h3 {
+        margin: 0;
+        margin-bottom: 10px;
+        color: darkgreen;
+        font-size: larger;
+    }
+    .service-card p {
+        margin: 0;
+        color: orangered;
+        font-size: medium;
+        line-height: normal;
+    }
+    .service-card button {
+        margin-top: 25px;
+        padding: 15px;
+        background-color: gold;
+        color: darkgreen;
+        border: 1px solid black;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+    
+    
+    </style>
+</head>
+<body>
+    <div class="services-section">
+        <h2>Наши услуги</h2>
+        <div class="service-cards-grid">
+            <div class="service-card">
+                <div class="icon">&#9733</div>
+                <h3>Веб-разработка</h3>
+                <p>Воплотим ваши идеи в жизнь, создавая современные и функциональные веб-сайты, которые выделят ваш бизнес в интернете. От простых лендингов до сложных корпоративных порталов – мы гарантируем стабильность и безопасность вашего онлайн-присутствия.</p>
+                <button>Узнать больше</button>
+            </div>
+            <div class="service-card">
+                <div class="icon">&#9733</div>
+                <h3>Дизайн</h3>
+                <p>Привлеките внимание аудитории с помощью уникального и запоминающегося дизайна. Мы разработаем интуитивно понятный интерфейс и привлекательную графику, которые не только выглядят стильно, но и эффективно работают на ваши цели.</p>
+                <button>Узнать больше</button>
+            </div>
+            <div class="service-card">
+                <div class="icon">&#9733</div>
+                <h3>SEO-Продвижение</h3>
+                <p>Обеспечьте высокие позиции вашего сайта в поисковых системах и привлеките больше целевых клиентов. Наши эксперты по SEO-оптимизации используют передовые стратегии, чтобы ваш бизнес был заметен там, где его ищут.</p>
+                <button>Узнать больше</button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
