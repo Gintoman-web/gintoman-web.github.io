@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио Александра</title> <style>
+
+body {
+    font-family: 'Arial', sans-serif; 
+    margin: 0;
+    background-color: #F8F8F8; 
+    color: #343A40;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #FFFFFF; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.site-title {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #212529; 
+    text-decoration: none;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 40px;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    color: #007BFF;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+    font-weight: 600;
+}
+
+.main-nav ul li a:hover {
+    color: #17A2B8;
+}
+
+.burger-menu {
+    display: none;
+    font-size: 2em;
+    color: #007BFF;
+    cursor: pointer;
+}
+
+.about-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    color: #343A40;
+}
+
+.about-section h2 {
+    margin-bottom: 40px;
+    color: #212529;
+    font-size: 2.2em;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+    align-items: center;
+    text-align: left;
+    padding: 0 20px;
+}
+
+.about-content img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.services-section {
+    padding: 80px 0; 
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.services-section h2 {
+    margin-bottom: 50px; 
+    color: #212529;
+    font-size: 2.2em;
+}
+
+.service-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.icon {
+    font-size: 3.5em;
+    color: #007BFF;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    margin: 0;
+    margin-bottom: 10px;
+    color: #212529;
+    font-size: 1.5em;
+}
+
+.service-card p {
+    margin: 0;
+    color: #343A40;
+    font-size: 1em;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.service-card button {
+    margin-top: 30px;
+    padding: 12px 25px;
+    background-color: #007BFF;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.service-card button:hover {
+    background-color: #17A2B8;
+    transform: translateY(-2px);
+}
+
+/* Секция контактов */
+.contacts-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contacts-section h2 {
+    margin-bottom: 50px;
+    color: #212529;
+    font-size: 2.2em;
+}
+
+.contacts-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.user-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    padding: 25px;
+    background-color: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.user-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.user-card .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+    border: 3px solid #007BFF;
+}
+
+.user-card .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.user-card .info h3 {
+    margin: 0;
+    font-size: 1.4em;
+    color: #212529;
+    margin-bottom: 5px;
+}
+
+.user-card .info p {
+    margin: 0;
+    color: #343A40;
+    font-size: 1em;
+}
+
+.connection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 300px;
+}
+
+.connection ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 40px;
+}
+
+.connection ul li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #343A40;
+}
+
+.connection ul li img {
+    max-width: 40px;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.connection ul li img:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 15px;
+    }
+    .main-nav ul {
+        gap: 20px;
+    }
+    .main-nav ul li a {
+        font-size: 0.9em;
+    }
+    .about-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+    }
+    .service-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 15px;
+    }
+    .contacts-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 0 15px;
+    }
+    .user-card {
+        width: 100%;
+        max-width: 350px;
+    }
+    .connection ul {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+        width: 100%;
+    }
+    .connection ul li {
+        width: 100%;
+        justify-content: flex-start;
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        justify-content: space-between;
+    }
+    .main-nav ul {
+        display: none;
+    }
+    .burger-menu {
+        display: block;
+    }
+    .site-title {
+        font-size: 1.5em;
+    }
+
+    .about-section {
+        padding: 40px 15px;
+    }
+    .about-section h2 {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+    .about-text p {
+        font-size: 0.95em;
+    }
+    .service-cards-grid {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+    }
+    .services-section h2 {
+        font-size: 1.8em;
+        margin-bottom: 40px;
+    }
+    .contacts-section h2 {
+        font-size: 1.8em;
+        margin-bottom: 40px;
+    }
+    .connection ul li {
+        padding-left: 10px;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="#" class="site-title">Александр</a> <nav class="main-nav">
+            <ul>
+                <li><a href="#about-section">Обо мне</a></li> <li><a href="#services-section">Портфолио</a></li>
+                <li><a href="#contacts-section">Контакты</a></li>
+            </ul>
+        </nav>
+        <div class="burger-menu">&#9776;</div>
+    </div>
+    <section class="about-section" id="about-section"> <h2>Обо мне</h2>
+        <div class="about-content">
+            <div class="about-image">
+                <img src="https://sun9-78.userapi.com/s/v1/ig2/6Vllk5BJOhBAknzPa-4l1-ujKlxxBOHmPygxVPGIfVoE9E5mSVJDU69ahYlzUCaWDkzXgW9HxxO_7EwQrthLBF9U.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,960x1280&from=bu&cs=960x0" alt="Моя фотография">
+            </div>
+            <div class="about-text">
+                <p>Привет! Меня зовут Александр, и я — веб-разработчик, который фокусируется на создании современных и адаптивных веб-сайтов. В своей работе я опираюсь на HTML5 и CSS3, обеспечивая безупречное отображение и удобство использования проектов на любых устройствах. Я всегда стремлюсь к развитию и готов воплощать ваши идеи в жизнь, создавая функциональные и визуально привлекательные решения. Буду рад сотрудничеству!</p>
+            </div>
+        </div>
+    </section>
+    <div class="services-section" id="services-section"> <h2>Мои работы</h2>
+        <div class="service-cards-grid">
+            <div class="service-card">
+                <div class="icon">&#9733</div>
+                <h3>Секция услуг с карточками</h3>
+                <p>Этот проект показывает, как я создаю привлекательные и информативные секции для услуг или товаров, которые удобно просматривать на любом устройстве. Дизайн карточек интуитивно понятен, а их расположение автоматически подстраивается под размер экрана вашего посетителя, обеспечивая легкий доступ к информации.</p>
+                <button>Посмотреть на GitHub</button>
+            </div>
+            <div class="service-card">
+                <div class="icon">&#9733</div>
+                <h3>Адаптивный макет портфолио</h3>
+                <p>В рамках этого проекта я разработал адаптивное портфолио, которое безупречно отображает контент на любых устройствах — от настольных компьютеров до смартфонов. Ваши работы и информация будут выглядеть профессионально и быть легкодоступными для каждого посетителя, независимо от того, чем он пользуется.</p>
+                <button>Посмотреть на GitHub</button>
+            </div>
+            <div class="service-card">
+                <div class="icon">&#9733</div>
+                <h3>Адаптивный хедер и секция "О нас"</h3>
+                <p>Этот проект демонстрирует создание современной навигации и раздела "О нас", которые выглядят отлично и удобны в использовании на всех типах устройств. Навигационное меню легко адаптируется для мобильных пользователей (с удобным "бургер-меню"), а информация о вашей компании представлена так, чтобы её было комфортно читать и просматривать на любом экране.</p>
+                <button>Посмотреть на GitHub</button>
+            </div>
+        </div>
+    </div>
+    <section class="contacts-section" id="contacts-section"> <h2>Контакты</h2>
+        <div class="contacts-wrapper">
+            <div class="user-card">
+                <img class="avatar" src="https://sun9-78.userapi.com/s/v1/ig2/6Vllk5BJOhBAknzPa-4l1-ujKlxxBOHmPygxVPGIfVoE9E5mSVJDU69ahYlzUCaWDkzXgW9HxxO_7EwQrthLBF9U.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,960x1280&from=bu&cs=960x0" alt="Моя фотография">
+                <div class="info">
+                    <h3>Александр</h3>
+                    <p>Онлайн</p>
+                </div>
+            </div>
+            <nav class="connection">
+                <ul>
+                    <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ81LxxyQjzDg_eLbctxWPq0okAEtSkYKbhow&s" alt="gmail">gintokiletsplay@gmail.com</li>
+                    <li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/VK_Compact_Logo_%282021-present%29.svg/1200px-VK_Compact_Logo_%282021-present%29.svg.png" alt="vk">@studentololo</li>
+                    <li><img src="https://similarpng.com/_next/image?url=https%3A%2F%2Fimage.similarpng.com%2Ffile%2Fsimilarpng%2Fvery-thumbnail%2F2021%2F10%2FTelegram-icon-on-transparent-background-PNG.png&w=3840&q=75" alt="telegram">@gintomanix</li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+</body>
+</html>
