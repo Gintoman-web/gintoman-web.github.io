@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прайсинг-таблица</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #eef2f7;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.pricing-section {
+    max-width: 1000px;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.pricing-section h2 {
+    font-size: 2.2em;
+    color: #333;
+    margin-bottom: 50px;
+}
+
+.pricing-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.pricing-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    flex: 1 1 300px; /* Гибкая ширина для 3 колонок */
+    max-width: 32%; /* Для более точного контроля на больших экранах */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.pricing-card.featured {
+    border: 2px solid #007bff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: scale(1.03);
+}
+
+.pricing-card h3 {
+    font-size: 1.8em;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.price {
+    font-size: 3em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.price .currency {
+    font-size: 0.5em;
+    vertical-align: super;
+}
+
+.price .period {
+    font-size: 0.4em;
+    color: #777;
+    margin-left: 5px;
+}
+
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    text-align: left;
+    flex-grow: 1; /* Чтобы список занимал доступное пространство */
+}
+
+.pricing-card ul li {
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 1em;
+}
+
+.pricing-card ul li.disabled {
+    color: #aaa;
+    text-decoration: line-through;
+}
+
+.btn {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box; /* Учитываем padding в ширине */
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .pricing-card {
+        max-width: 48%; /* 2 колонки на планшетах */
+    }
+}
+
+@media (max-width: 768px) {
+    .pricing-section h2 {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+    .pricing-card {
+        max-width: 100%; /* 1 колонка на мобильных */
+        margin: 0 auto; /* Центрируем */
+    }
+}
+    </style>
+</head>
+<body>
+    <section class="pricing-section">
+        <h2>Выберите свой план</h2>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Базовый</h3>
+                <div class="price">
+                    <span class="currency">₽</span>1500<span class="period">/мес</span>
+                </div>
+                <ul>
+                    <li>✅ 10 ГБ хранилища</li>
+                    <li>✅ 1 проект</li>
+                    <li>✅ Базовая поддержка</li>
+                    <li>❌ Расширенная аналитика</li>
+                </ul>
+                <button class="btn">Выбрать</button>
+            </div>
+
+            <div class="pricing-card featured">
+                <h3>Стандарт</h3>
+                <div class="price">
+                    <span class="currency">₽</span>2900<span class="period">/мес</span>
+                </div>
+                <ul>
+                    <li>✅ 50 ГБ хранилища</li>
+                    <li>✅ 5 проектов</li>
+                    <li>✅ Приоритетная поддержка</li>
+                    <li>✅ Расширенная аналитика</li>
+                </ul>
+                <button class="btn">Выбрать</button>
+            </div>
+
+            <div class="pricing-card">
+                <h3>Премиум</h3>
+                <div class="price">
+                    <span class="currency">₽</span>4900<span class="period">/мес</span>
+                </div>
+                <ul>
+                    <li>✅ Безлимитное хранилище</li>
+                    <li>✅ Неограниченно проектов</li>
+                    <li>✅ Персональный менеджер</li>
+                    <li>✅ Расширенная аналитика</li>
+                </ul>
+                <button class="btn">Выбрать</button>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
