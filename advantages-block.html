@@ -4,7 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Наши преимущества</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.advantages-section {
+    max-width: 960px;
+    width: 100%;
+    text-align: center;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.advantages-section h2 {
+    font-size: 2.2em;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.advantages-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+.advantage-item {
+    background-color: #fdfdfd;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 25px;
+    flex: 1 1 calc(33.333% - 25px);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 280px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.advantage-item:hover {
+    transform: translateY(-5px);
+}
+
+.icon {
+    font-size: 3em;
+    margin-bottom: 15px;
+    color: #007bff;
+}
+
+.advantage-item h3 {
+    font-size: 1.3em;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.advantage-item p {
+    font-size: 0.95em;
+    color: #666;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .advantages-grid {
+        gap: 20px;
+    }
+    .advantage-item {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .advantages-section h2 {
+        font-size: 1.8em;
+    }
+    .advantages-grid {
+        gap: 15px;
+    }
+    .advantage-item {
+        flex: 1 1 100%;
+        padding: 20px;
+    }
+}
+    </style>
 </head>
 <body>
     <div class="advantages-section">
