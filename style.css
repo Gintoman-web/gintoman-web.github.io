@@ -277,8 +277,21 @@ body {
         padding: 15px;
     }
     .main-nav ul {
-        gap: 20px;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        padding: 15px 0;
+        text-align: center;
+        display: none;
+        z-index: 1000;
     }
+    .main-nav.active ul {
+        display: flex;
+    }
+
     .main-nav ul li a {
         font-size: 0.9em;
     }
@@ -311,6 +324,9 @@ body {
         width: 100%;
         justify-content: flex-start;
         padding-left: 20px;
+    }
+    .burger-menu {
+        display: block;
     }
 }
 
