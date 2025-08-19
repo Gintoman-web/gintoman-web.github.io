@@ -44,7 +44,7 @@
         
         </div>
     </div>
-    <footer class="contacts-section" id="contacts-section"> <h2>Контакты</h2>
+    <section class="contacts-section" id="contacts-section"> <h2>Контакты</h2>
         <div class="contacts-wrapper">
             <div class="user-card">
                 <img class="avatar" src="https://sun9-78.userapi.com/s/v1/ig2/6Vllk5BJOhBAknzPa-4l1-ujKlxxBOHmPygxVPGIfVoE9E5mSVJDU69ahYlzUCaWDkzXgW9HxxO_7EwQrthLBF9U.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,960x1280&from=bu&cs=960x0" alt="Моя фотография">
@@ -60,8 +60,23 @@
                     <li><img src="https://similarpng.com/_next/image?url=https%3A%2F%2Fimage.similarpng.com%2Ffile%2Fsimilarpng%2Fvery-thumbnail%2F2021%2F10%2FTelegram-icon-on-transparent-background-PNG.png&w=3840&q=75" alt="telegram">@gintomanix</li>
                 </ul>
             </nav>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Имя:</label>
+                    <input type="text" id="name" name="name" placeholder="Введите ваш email" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Введите ваш email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Сообщение:</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Введите ваше сообщение" required></textarea>
+                </div>
+                <button type="submit">Отправить</button>
+            </form>
         </div>
-    </footer>
+    </section>
     <script src="script.js"></script>
 </body>
 </html>

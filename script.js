@@ -135,3 +135,20 @@ console.log("Площадь комнаты: " + roomArea + " кв. м. ");
 
 console.log("Площадь другого участка: " + calculateArea(7, 8) + " кв. м . ");
 
+const contactForm = document.querySelector('.contact-form');
+const nameInput = document.getElementById('name');
+const emailInput = document.getElementById('email');
+const messageInput = document.getElementById('message');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        if (nameInput.value === '' || emailInput.value === '' || messageInput.value === '' ) {
+            alert('Пожалуйста, заполните все обязательные поля.');
+        } else {
+            alert('Форма успешно отправлена!');
+            contactForm.reset();
+        }
+    });
+}
+
