@@ -6,6 +6,10 @@ body {
     color: #343A40;
 }
 
+h1 {
+    text-align: center;
+}
+
 .header {
     display: flex;
     justify-content: space-between; 
@@ -272,6 +276,33 @@ body {
     transform: scale(1.1);
 }
 
+.click-counter-section {
+    text-align: center;
+}
+
+.click-counter-section button {
+    margin-top: auto;
+    padding: 12px 25px;
+    background-color: #007BFF;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.click-counter-section button:hover {
+    background-color: #17A2B8;
+    transform: translateY(-2px);
+}
+
+.highlight-contacts {
+    background-color: lightblue;
+    transition: background-color 0.5s ease;
+}
+
 @media (max-width: 768px) {
     .header {
         padding: 15px;
@@ -328,6 +359,9 @@ body {
     .burger-menu {
         display: block;
     }
+    .click-counter-section button:hover {
+    background-color: #007BFF;
+    transform: none;}
 }
 
 @media (max-width: 480px) {
@@ -369,4 +403,7 @@ body {
     .connection ul li {
         padding-left: 10px;
     }
+    .click-counter-section button:hover {
+    background-color: #007BFF;
+    transform: none;}
 }
