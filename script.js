@@ -59,7 +59,7 @@ if (greetingDisplay) {
     greetingDisplay.innerText = finalGreeting;
 }
 
-const projects = [
+ /* const projects = [
     {
         title: "Секция услуг с карточками",
         description: "Дизайн и адаптивная вёрстка секции услуг с красивыми карточками, демонстрирующими различные предложения.",
@@ -70,29 +70,42 @@ const projects = [
         description: "Первая работа, выполненная строго по макету, с полностью адаптивным дизайном и удобным 'бургер-меню'.",
         link: "adaptive-portfolio.html"
     }
-];
+]; */
 
 const portfolioContainer = document.getElementById('portfolio-container');
 
-let projectsHTML = '';
+async function fetchProjects() {
+    try {
+        const username = "gintoman-web";
+        const response = await fetch(`https://api.github.com/users/${username}/repos`);
+        const data = await response.json();
 
-for (let i = 0; i < projects.length; i++) {
-    const project = projects[i];
-const projectCardHTML = `
-<div class="servicecard">
-<h3>${project.title}</h3>
-<p>${project.description}</p>
-<a href="${project.link}" target="_blank">
-<button>Посмотреть</button>
-</a>
+let projectsHTML = '';
+data.forEach(repo => {
+    const projectCardHTML = `
+    <div class="servicecard">
+    <h3>${repo.name}</h3>
+    <p>${repo.description || "Описание отсутствует."}</p>
+    <a href="${repo.html_url}" target="_blank">
+    <button>Посмотреть на GitHub</button>
+    </a>
 </div>
 `;
 projectsHTML += projectCardHTML;
-}
+});
 
 if (portfolioContainer) {
     portfolioContainer.innerHTML = projectsHTML;
 }
+} catch (error) {
+    console.error("Ошибка при загрузке проектов.", error);
+    if (portfolioContainer) {
+        portfolioContainer.innerHTML = '<p>Не удалось загрузить проекты. Пожалуйста, попробуйте позже.</p>';
+    }
+}
+}
+
+fetchProjects();
 
 const clickButton = document.getElementById('clickMeButton');
 const countDisplay = document.getElementById('clickCountDisplay');
@@ -145,7 +158,15 @@ if (contactForm) {
         event.preventDefault();
         if (nameInput.value === '' || emailInput.value === '' || messageInput.value === '' ) {
             alert('Пожалуйста, заполните все обязательные поля.');
-        } else {
+            return;
+        } 
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+        if (!emailRegex.test(emailInput.value)) {
+            alert("Пожалуйста, введите корректный адрес электронной почты.");
+            return;
+        }
+        {
             alert('Форма успешно отправлена!');
             contactForm.reset();
         }
